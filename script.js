@@ -97,6 +97,7 @@ function createSparkles() {
   function toggleVip() {
     const section = document.getElementById("vipSection");
     const btn = document.getElementById("vipBtn");
+    const featBtn = document.getElementById("featBtn");
   
     const isOpening = !section.classList.contains("show");
   
@@ -104,6 +105,11 @@ function createSparkles() {
   
     if (isOpening) {
       btn.textContent = "Hide VIP Guest";
+  
+      // show Featuring ONLY after VIP opens
+      setTimeout(() => {
+        featBtn.style.display = "inline-block";
+      }, 400);
   
       setTimeout(() => {
         section.scrollIntoView({
@@ -113,7 +119,35 @@ function createSparkles() {
       }, 250);
   
     } else {
-      btn.textContent = "VIP Guest";
+      btn.textContent = "VIP GUEST";
+  
+      // hide everything related to Featuring
+      featBtn.style.display = "none";
+      document.getElementById("featSection").classList.remove("show");
+      featBtn.textContent = "Featuring";
+    }
+  }
+
+  function toggleFeaturing() {
+    const section = document.getElementById("featSection");
+    const btn = document.getElementById("featBtn");
+  
+    const isOpening = !section.classList.contains("show");
+  
+    section.classList.toggle("show");
+  
+    if (isOpening) {
+      btn.textContent = "Hide Featuring";
+  
+      setTimeout(() => {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 250);
+  
+    } else {
+      btn.textContent = "Featuring";
     }
   }
   
