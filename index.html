@@ -1,25 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Secret Mission</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Invitation</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
+
+
+
 <body>
+    <div class="sparkle-container"></div>
 
-    <h1>🎁 Surprise Trip</h1>
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-    <p>Click below to reveal your destination.</p>
+    <div class="hero-overlay"></div>
 
-    <button onclick="revealDestination()">
-        Reveal
-    </button>
+    <div class="hero-content">
+      <h1>Happy Birthday</h1>
+      <p>A private invitation awaits</p>
 
-    <div id="destination" class="hidden">
-        <h2>✈️ We're going to Rome!</h2>
-        <p>15 Aug - 20 Aug</p>
+      <button class="reveal-btn" onclick="toggleInvitation()" id="btn">
+        View Invitation
+      </button>
+      
     </div>
 
-    <script src="script.js"></script>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="container">
+
+    <div id="invitation" class="hidden-content">
+
+      <p class="invite">
+        You are kindly invited to a getaway weekend.
+      </p>
+
+      <div class="journey-card">
+
+        <div class="journey-top">
+          <span class="label">PRIVATE JOURNEY</span>
+          <span class="status">CONFIRMED</span>
+        </div>
+      
+        <div class="journey-main">
+      
+          <div class="block">
+            <p class="title">DATE</p>
+            <p class="value">25.07</p>
+          </div>
+      
+          <div class="block">
+            <p class="title">DURATION</p>
+            <p class="value">1 NIGHT</p>
+          </div>
+      
+          <div class="block">
+            <p class="title">TRAVEL</p>
+            <p class="value">BY CAR</p>
+          </div>
+      
+        </div>
+      
+        <div class="journey-route">
+            <div class="point">
+              <div class="city">SOFIA</div>
+              <div class="sub">Departure</div>
+            </div>
+          
+            <div class="line"></div>
+          
+            <div class="point">
+              <div class="city">NEA IRAKLITSA</div>
+              <div class="sub">Destination</div>
+            </div>
+          </div>
+          
+          <p class="journey-extra">
+            🚗 Approx. travel time: 4 hours by car
+          </p>
+      
+        <div class="journey-note">
+          A private escape has been arranged for your birthday getaway.
+        </div>
+      
+      </div>
+
+      <!-- GALLERY -->
+      <div class="gallery">
+
+        <img class="fade-in right" src="beach.jpg">
+        <img class="fade-in left" src="villa1.jpg">
+        <img class="fade-in right" src="villa2.jpg">
+        <img class="fade-in left" src="villa3.jpg">
+        <img class="fade-in right" src="villa4.jpg">
+        <img class="fade-in left" src="villa5.jpg">
+        <img class="fade-in right" src="villa6.jpg">
+        <img class="fade-in left" src="villa7.jpg">
+
+      </div>
+
+      <!-- MAP -->
+      <div class="map-section">
+        <h2>📍 Location</h2>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3016.7954058935097!2d24.308480776523893!3d40.8763639275362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14aeb77a38f7dd6b%3A0x331495d7bfd34d41!2sYuka%20Villas%20Collection!5e0!3m2!1sbg!2sbg!4v1780932282513!5m2!1sbg!2sbg"
+          class="map">
+        </iframe>
+
+      </div>
+
+      <!-- VIP BUTTON (NOW INSIDE INVITATION) -->
+  <div class="vip-button-wrapper">
+    <button class="reveal-btn" onclick="toggleVip()" id="vipBtn">
+      VIP Guest
+    </button>
+  </div>
+
+  <!-- VIP CONTENT -->
+  <div id="vipSection" class="hidden-content">
+
+    <div class="pet-section">
+
+      <img class="pet-img fade-in" src="poodle1.png">
+
+      <p class="pet-text">
+        She is warmly invited to join the getaway at the villa 🐩✨
+      </p>
+
+      <img class="pet-img fade-in" src="poodle2.png">
+
+    </div>
+
+  </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
