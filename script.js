@@ -98,10 +98,20 @@ function createSparkles() {
     const section = document.getElementById("vipSection");
     const btn = document.getElementById("vipBtn");
   
+    const isOpening = !section.classList.contains("show");
+  
     section.classList.toggle("show");
   
-    if (section.classList.contains("show")) {
+    if (isOpening) {
       btn.textContent = "Hide VIP Guest";
+  
+      setTimeout(() => {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 250);
+  
     } else {
       btn.textContent = "VIP Guest";
     }
